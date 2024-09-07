@@ -1,0 +1,10 @@
+<div class="container mt-5">
+    <h1 class="text-center">List of Students</h1>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        {{#each students}}
+        <option value="{{this.name}}">{{this.name}} - {{this.email}}</option>
+        {{/each}}
+
+    </select>
+</div>

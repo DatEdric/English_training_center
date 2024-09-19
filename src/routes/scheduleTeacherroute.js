@@ -6,14 +6,14 @@ router.get('/', scheduleTeacherController.getAllTeacher);
 
 router.post('/schedule', scheduleTeacherController.listScheduleTeacher);
 
-// router.get('/edit/:id', scheduleTeacherController.editDailySchedule);
-// router.put('/edit/:id', scheduleTeacherController.updateDailySchedule);
+router.get('/edit/:id', scheduleTeacherController.getScheduleTeacherById);
+router.put('/update/:id', scheduleTeacherController.updateScheduleTeacherById);
 
-// router.patch('/delete/:id', scheduleTeacherController.deleteScheduleDailyById);
-// router.delete('/force-delete/:id', scheduleTeacherController.forceDeleteScheduleById);
-// router.get('/deleted', scheduleTeacherController.getDeletedScheduleDaily);
+router.patch('/delete/:id', scheduleTeacherController.deleteScheduleTeacherById);
+router.delete('/force-delete/:id', scheduleTeacherController.forceDeleteScheduleTeacherById);
+router.get('/deleted', scheduleTeacherController.getDeletedScheduleTeacher);
 
-// router.patch('/restore/:id', scheduleTeacherController.restoreScheduleDaily);
+router.patch('/restore/:id', scheduleTeacherController.restoreScheduleTeacher);
 
 
 module.exports= router;

@@ -1,0 +1,56 @@
+<h1 class="text-center mt-5">classroom information table</h1>
+
+<a href="/classroom/deleted" class="mx-5" style="float: right;">
+<button class="btn btn-primary">
+    <i class="fa-solid fa-trash-arrow-up"></i>
+</button>
+</a>
+
+<div class="m-5">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Tên khóa học </th>
+                <th scope="col">tên lớp</th>
+                <th scope="col">ca dạy (giờ) </th>
+                <th scope="col">thời gian bắt đầu</th>
+                <th scope="col">thời gian kết thúc</th>
+                <th scope="col">ngày dạy</th>
+                <th scope="col">số phòng</th>
+                <th scope="col">loại phòng học</th>
+                <th scope="col">số lượng học viên</th>
+                <th scope="col">tên giáo viên</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+                <tr >
+                    <th scope="row">{{this.course_name}}</th>
+                    <td>{{this.class_name}}</td>
+                    <td>{{this.teaching_shift}}</td>
+                    <td>{{this.start_date}}</td>
+                    <td>{{this.end_date}}</td>
+                    <td>{{this.schedule_date}}</td>
+                    <td>{{this.classroom_name}}</td>
+                    <td>{{this.type}}</td>
+                    <td>{{this.capacity}}</td>
+                    <td>{{this.teacher_name}}</td>
+                    <td>
+                        <a href="/classroom/edit/{{this.id}}">
+                            <button class="btn btn-warning">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                         </a>
+                        <a href="/classroom/delete/{{this.id}}" onclick="return confirm('Are you sure you want to delete this record?');">
+                            <button class="btn btn-danger mt-2">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+

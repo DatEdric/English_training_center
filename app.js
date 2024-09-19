@@ -6,11 +6,13 @@ const db = require('./db-connect');
 const configViewEngine = require('./viewEngine');
 const route = require('./src/routes')
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 
 
 app.use(morgan('combined'));
 app.use(cors());
-
+app.use(bodyParser.json());
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 configViewEngine(app);
 route(app);

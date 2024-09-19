@@ -1,10 +1,30 @@
 <div class="container mt-5">
     <h1 class="text-center">List of Students</h1>
-    <select class="form-select" aria-label="Default select example">
+    {{!-- <select class="form-select" aria-label="Default select example">
         <option selected>Open this select menu</option>
-        {{#each students}}
-        <option value="{{this.name}}">{{this.name}} - {{this.email}}</option>
-        {{/each}}
+        <option value="{{this.name}}">{{this.name}} - {{this.enrollment_date}}</option>
+    </select> --}}
 
-    </select>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Enrollment Date</th>
+                <th scope="col">Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+        {{#each students}}
+                <tr>
+                <th scope="row">{{this.id}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.enrollment_date}}</td>
+                <td>{{this.created_at}}</td>
+                </tr>
+            </tbody>
+        {{/each}}
+        </table>
 </div>

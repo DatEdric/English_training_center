@@ -1,0 +1,44 @@
+<h1 class="text-center mt-5">Deleted Classroom Information Table</h1>
+
+<div class="m-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Tên khóa học </th>
+                <th scope="col">tên lớp</th>
+                <th scope="col">ca dạy (giờ) </th>
+                <th scope="col">thời gian bắt đầu</th>
+                <th scope="col">thời gian kết thúc</th>
+                <th scope="col">ngày dạy</th>
+                <th scope="col">số phòng</th>
+                <th scope="col">loại phòng học</th>
+                <th scope="col">số lượng học viên</th>
+                <th scope="col">tên giáo viên</th>
+                <th scope="col">Restore</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each deletedData}}
+                <tr>
+                    <th scope="row">{{this.course_name}}</th>
+                    <td>{{this.class_name}}</td>
+                    <td>{{this.teaching_shift}}</td>
+                    <td>{{this.start_date}}</td>
+                    <td>{{this.end_date}}</td>
+                    <td>{{this.schedule_date}}</td>
+                    <td>{{this.classroom_name}}</td>
+                    <td>{{this.type}}</td>
+                    <td>{{this.capacity}}</td>
+                    <td>{{this.teacher_name}}</td>
+                    <td>
+                        <a href="/classroom/restore/{{this.id}}">
+                            <button class="btn btn-success">
+                                <i class="fa-solid fa-rotate-left"></i> Restore
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

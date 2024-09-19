@@ -1,1 +1,20 @@
-<h1>THIS IS MY HOME PAGE </h1>
+<h1 class="text-center mt-5">Classroom Information Form</h1>
+
+<div class="container mt-5">    
+    <form id="classroomForm" method="post" action="/classroom">
+        <div class="form-group">
+            <label for="classSelect">Tên Lớp Học</label>
+            <select class="form-control" id="classSelect" name="name" required>
+                <option value="" class="text-center">Chọn lớp học</option>
+                {{#each classroom}}
+                    <option value="{{classroom_name}}">{{classroom_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="schedule_date" class="form-label">Enter Date for Search</label>
+            <input type="date" class="form-control" id="schedule_date" name="date" value="">
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Confirm Identity</button>
+    </form>
+</div>

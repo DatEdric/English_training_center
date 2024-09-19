@@ -1,0 +1,71 @@
+<h1 class="text-center mt-5">Chỉnh sửa thông tin lớp học</h1>
+
+<div class="container mt-5">
+    <form action="/classroom/update/{{classroom.id}}" method="POST">
+        <!-- Tên khóa học -->
+        <div class="form-group">
+            <label for="course_name">Tên khóa học</label>
+            <input type="text" class="form-control" id="course_name" name="course_name" value="{{classroom.course_name}}" required>
+        </div>
+
+        <!-- Tên lớp -->
+        <div class="form-group">
+            <label for="class_name">Tên lớp</label>
+            <input type="text" class="form-control" id="class_name" name="class_name" value="{{classroom.class_name}}" required>
+        </div>
+
+        <!-- Ca dạy (giờ) -->
+        <div class="form-group">
+            <label for="teaching_shift">Ca dạy (giờ)</label>
+            <input type="text" class="form-control" id="teaching_shift" name="teaching_shift" value="{{classroom.teaching_shift}}" required>
+        </div>
+
+        <!-- Thời gian bắt đầu -->
+        <div class="form-group">
+            <label for="start_date">Thời gian bắt đầu</label>
+            <input type="date" class="form-control" id="start_date" name="start_date" value="{{classroom.start_date}}" required>
+        </div>
+
+        <!-- Thời gian kết thúc -->
+        <div class="form-group">
+            <label for="end_date">Thời gian kết thúc</label>
+            <input type="date" class="form-control" id="end_date" name="end_date" value="{{classroom.end_date}}" required>
+        </div>
+
+        <!-- Ngày dạy -->
+        <div class="form-group">
+            <label for="schedule_date">Ngày dạy</label>
+            <input type="date" class="form-control" id="schedule_date" name="schedule_date" value="{{classroom.schedule_date}}" required>
+        </div>
+
+        <!-- Số phòng -->
+        <div class="form-group">
+            <label for="classroom_name">Số phòng</label>
+            <input type="text" class="form-control" id="classroom_name" name="classroom_name" value="{{classroom.classroom_name}}" required>
+        </div>
+
+        <!-- Loại phòng học -->
+        <div class="form-group">
+            <label for="type">Loại phòng học</label>
+            <input type="text" class="form-control" id="type" name="type" value="{{classroom.type}}" required>
+        </div>
+
+        <!-- Số lượng học viên -->
+        <div class="form-group">
+            <label for="capacity">Số lượng học viên</label>
+            <input type="number" class="form-control" id="capacity" name="capacity" value="{{classroom.capacity}}" required>
+        </div>
+
+        <!-- Tên giáo viên -->
+        <div class="form-group">
+            <label for="teacher_name">Tên giáo viên</label>
+            <input type="text" class="form-control" id="teacher_name" name="teacher_name" value="{{classroom.teacher_name}}" required>
+        </div>
+
+        <!-- Nút Submit -->
+        <button type="submit" class="btn btn-primary mt-4">Cập nhật thông tin</button>
+
+        <!-- Nút hủy bỏ -->
+        <a href="/classroom" class="btn btn-secondary mt-4 ml-2">Hủy bỏ</a>
+    </form>
+</div>
